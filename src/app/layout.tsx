@@ -3,6 +3,7 @@ import './globals.css'
 import { Open_Sans as OpenSans } from 'next/font/google'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
+import { CallToAction } from '@/components/CallToAction'
 
 const openSans = OpenSans({ subsets: ['latin'] })
 
@@ -17,6 +18,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body
         className={`${openSans.className} flex min-h-screen flex-col bg-gray-100 font-sans text-gray-950`}
       >
+        <CallToAction />
         <Header />
         {children}
         <Footer />
