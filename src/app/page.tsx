@@ -1,6 +1,9 @@
-import { FamilyCard } from '@/components/FamilyCard'
+import { getFamilies } from '@/services/families'
+import { Families } from '@/components/Families'
 
-export default function Home() {
+export default async function Home() {
+  const loadedFamilies = await getFamilies(0, 21)
+
   return (
     <main className="flex flex-1 flex-col">
       <div className="px-[18%] py-7 shadow-md">
@@ -9,16 +12,7 @@ export default function Home() {
       </div>
       <div className="px-[18%] py-7">
         <h2 className="text-xl font-semibold leading-tight">Resultados</h2>
-        <div className="my-4 grid grid-cols-2 gap-4 md:grid-cols-4 xl:grid-cols-7">
-          {/* Grid */}
-          <FamilyCard />
-          <FamilyCard />
-          <FamilyCard />
-          <FamilyCard />
-          <FamilyCard />
-          <FamilyCard />
-          <FamilyCard />
-        </div>
+        <Families data={loadedFamilies} />
       </div>
     </main>
   )

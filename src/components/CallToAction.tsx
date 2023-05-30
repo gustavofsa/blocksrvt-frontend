@@ -11,7 +11,7 @@ export function CallToAction() {
   const isMobile = !!width && width <= 767
 
   return !isClosed || !isMobile ? (
-    <div className="absolute bottom-0 flex w-screen flex-col  items-center justify-center gap-4 bg-gray-900 px-[14px] py-3 text-center md:bottom-auto md:top-0 md:flex-row">
+    <div className="fixed bottom-0 flex w-screen flex-col items-center justify-center gap-4 bg-gray-900 px-3.5 py-3 text-center md:bottom-auto md:top-0 md:flex-row">
       {isMobile && (
         <button
           className="align-center flex justify-center gap-1 leading-tight text-white"
